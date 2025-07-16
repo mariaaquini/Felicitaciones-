@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¡Feliz cumple, Alberto!</title>
+  <style>
+    body {
+      background-color: #2196F3; /* azul */
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: white;
+      color: #2196F3;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #f0f0f0;
+    }
+
+    #no {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Feliz cumpleeee, Alberto! 🎉🥳</h1>
+  <p>Bienvenido a la legalidad, ahora sí oficialmente adulto...</p>
+  <p>¿No estás enojado?</p>
+
+  <form id="felizCumple" action="https://formspree.io/f/xovlqpkb" method="POST">
+    <input type="hidden" name="respuesta" id="respuesta">
+    <button type="button" class="btn" onclick="enviarRespuesta('Sí')">Sí</button>
+    <button type="button" class="btn" id="no" onmouseover="moverNo()">No</button>
+  </form>
+
+  <script>
+    function moverNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function enviarRespuesta(respuesta) {
+      document.getElementById("respuesta").value = respuesta;
+      alert("¡Sabía que no estabas enojado! 😂🎉");
+      document.getElementById("felizCumple").submit();
+    }
+  </script>
+</body>
+</html>
